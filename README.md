@@ -1,5 +1,13 @@
 # # Swift Draggable Shapes
 
+original source: https://github.com/priteshdesai/Swift-Draggable-Shapes
+
+new modifications will be as follows: 
+
+1. snap to grid will be added (TODO)
+2. shape will now be UIView instead of UILabel
+3. more gestureRecognizers will be implemented
+
 This is a simple app that allows users to drag and drop shapes onto a canvas and play with it. 
 <img src="screenshot.png" width="300">
 
