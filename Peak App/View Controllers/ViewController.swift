@@ -49,7 +49,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		// Create an object
 		let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
 		let object = MyShape(frame: frame, shape: shape)
-		object.backgroundColor = .red
 		
 		// Randomize the point where the shapes are generated
 		let randomX = CGFloat(arc4random_uniform(150))

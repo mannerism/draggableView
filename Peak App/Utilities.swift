@@ -28,17 +28,39 @@ class MyShape: UIView {
 	}
 	
 	func setup(_ shape: Shape) {
+		setupDefaultConfig()
+		setupAppearance()
+		setupShape(shape)
+	}
+	
+	private func setupAppearance() {
+		backgroundColor = .clear
+		layer.borderWidth = CGFloat(4)
+		layer.borderColor = UIColor.lightGray.cgColor
+	}
+	
+	private func setupDefaultConfig() {
 		isUserInteractionEnabled = true
+	}
+	
+	private func setupShape(_ shape: Shape) {
 		switch shape {
 		case .circle:
-			self.layer.cornerRadius = self.frame.height / 2
+			configureCircle()
 		case .triangle:
-			let longerWidth = self.frame.width + 200
-			let height = self.frame.height
-			self.frame = CGRect(x: 0, y: 0, width: longerWidth, height: height)
+			configureRectangle()
 		default:
 			self.layer.cornerRadius = 0
 		}
 	}
 	
+	private func configureCircle() {
+		self.layer.cornerRadius = self.frame.height / 2
+	}
+	
+	private func configureRectangle() {
+		let longerWidth = self.frame.width + 200
+		let height = self.frame.height
+		self.frame = CGRect(x: 0, y: 0, width: longerWidth, height: height)
+	}
 }
